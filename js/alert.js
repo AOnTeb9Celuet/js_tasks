@@ -2,20 +2,10 @@
 
 const arr = [1, 5, 1, 3, '4', [3], 'text', 8, '33', 65, -7, {5:3}]
 
-let copyArr = [];
+const copyArr = arr.filter(item => typeof item === 'number');
 
-for(let i = 0; i < arr.length; i++) {
-    copyArr[i] = arr[i];
-}
+console.log(copyArr);
 
-for(let i = 0; i < copyArr.length; i++) {
-    if(typeof copyArr[i] != 'number') {
-        copyArr.splice(i, 1);
-    }
-}
-
-alert( arr );
-alert( copyArr );
 
 //2_________________________________________________________________________
 
@@ -24,8 +14,7 @@ const arr2 = [1, 2, 3];
 
 const resultArr2 = arr2.concat(arr2);
 
-alert( arr2 );
-alert( resultArr2 );
+console.log( resultArr2 );
 
 //3_________________________________________________________________________
 
@@ -41,11 +30,9 @@ copyArr3.reverse();
 
 const resultArr3 = arr3.concat(copyArr3);
 
-alert( arr3 );
+console.log( resultArr3 );
 
-alert( resultArr3 );
-
-//4_________________________________________________________________________ - не используя reduce
+//4_________________________________________________________________________
 
 const arr4 = [1, -5, 1, 3, '4', [3], 'text', 8, '33', 65, -7, {5:3}];
 
@@ -57,26 +44,15 @@ for(let i = 0; i < arr4.length; i++) {
     }
 }
 
-alert( sumArr4 );
+console.log( sumArr4 );
 
 //5_________________________________________________________________________ - остается объект в конце (хз почему)
 
 const arr5 = [1, -5, 1, 3, '4', [3], 'text', 8, '33', 65, -7, {5:3}];
 
-let copyArr5 = [];
+const copyArr5 = arr5.filter(item => typeof item === 'number' && item > 0)
 
-for(let i = 0; i < arr5.length; i++) {
-    copyArr5[i] = arr5[i];
-}
-
-for(let i = 0; i < copyArr5.length; i++) {
-    if(typeof copyArr5[i] != 'number' || copyArr5[i] < 0) {
-        copyArr5.splice(i, 1);
-    }
-}
-
-alert( arr5 );
-alert( copyArr5 );
+console.log( copyArr5 );
 
 //6_________________________________________________________________________
 
@@ -86,5 +62,13 @@ const arr6 = Object.values(obj);
 
 arr6.reverse();
 
-alert( arr6 )
+console.log( arr6 );
 
+
+/*
+const arr7 = [1, -5, 1, 3, '4', [3], 'text', 8, '33', 65, -7, {5:3}];
+
+const copyArr7 = arr7.map(item => item);
+
+console.log( copyArr7 );
+*/
